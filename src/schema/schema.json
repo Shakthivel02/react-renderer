@@ -1,0 +1,89 @@
+{
+  "type": "grid",
+  "columns": 1,
+  "children": [
+    {
+      "type": "card",
+      "children": [
+        {
+          "type": "typography",
+          "text": "User Management Directory",
+          "variant": "h1"
+        },
+        {
+          "type": "typography",
+          "text": "Add a new user to the system or manage existing ones.",
+          "variant": "secondary"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "children": [
+        {
+          "type": "typography",
+          "text": "Add New User",
+          "variant": "h2"
+        },
+        {
+          "type": "form",
+          "entityKey": "users",
+          "children": [
+            {
+              "type": "grid",
+              "columns": 3,
+              "children": [
+                {
+                  "type": "input",
+                  "name": "name",
+                  "label": "Full Name",
+                  "size": "md"
+                },
+                {
+                  "type": "input",
+                  "name": "email",
+                  "label": "Email Address",
+                  "size": "md"
+                },
+                {
+                  "type": "input",
+                  "name": "role",
+                  "label": "Job Role",
+                  "size": "md"
+                }
+              ]
+            },
+            {
+              "type": "button",
+              "text": "Create User",
+              "variant": "primary",
+              "action": "submitForm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "children": [
+        {
+          "type": "typography",
+          "text": "System Users",
+          "variant": "h2"
+        },
+        {
+          "type": "table",
+          "entityKey": "users",
+          "columns": [
+            { "header": "Full Name", "accessor": "name" },
+            { "header": "Email", "accessor": "email" },
+            { "header": "Role", "accessor": "role" }
+          ],
+          "actions": [
+            { "type": "delete", "label": "Remove" }
+          ]
+        }
+      ]
+    }
+  ]
+}

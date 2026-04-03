@@ -1,0 +1,21 @@
+{
+  "type": "grid",
+  "columns": 1,
+  "children": [
+    {
+      "type": "card",
+      "children": [
+        {
+          "type": "typography",
+          "text": "About Us",
+          "variant": "h1"
+        },
+        {
+          "type": "typography",
+          "text": "This is a dynamically generated 'About' page rendered from its own independent JSON schema using the same visual components as the Home page. Notice how we didn't have to code new React layout files!",
+          "variant": "secondary"
+        }
+      ]
+    }
+  ]
+}
