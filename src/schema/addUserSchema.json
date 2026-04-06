@@ -1,0 +1,133 @@
+{
+  "type": "card",
+  "children": [
+    {
+      "type": "grid",
+      "columns": 2,
+      "children": [
+        {
+          "type": "typography",
+          "text": "Add New User",
+          "variant": "h2"
+        },
+        {
+          "type": "button",
+          "text": "X",
+          "variant": "danger",
+          "action": "closeModal"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "entityKey": "users",
+      "children": [
+        {
+          "type": "grid",
+          "columns": 2,
+          "children": [
+            { "type": "input", "name": "firstName", "label": "First Name", "placeholder": "First Name" },
+            { "type": "input", "name": "lastName", "label": "Last Name", "placeholder": "Last Name" }
+          ]
+        },
+        {
+          "type": "grid",
+          "columns": 2,
+          "children": [
+            { "type": "input", "name": "email", "label": "Email ID", "placeholder": "example@gmail.com" },
+            { "type": "input", "name": "mobile", "label": "Mobile Number", "placeholder": "Mobile number" }
+          ]
+        },
+        {
+          "type": "typography",
+          "text": "Upload Profile Image (Optional)",
+          "variant": "body",
+          "style": { "fontWeight": 600, "marginTop": "16px" }
+        },
+        {
+          "type": "fileUpload",
+          "name": "profileImage",
+          "placeholder": "Choose a file or drag & drop it here.",
+          "helpText": "Jpeg, Png - Up to 10MB"
+        },
+        {
+          "type": "card",
+          "style": { "background": "#f8fafc", "border": "1px solid #e2e8f0" },
+          "children": [
+            {
+              "type": "checkbox",
+              "name": "isSuperUser",
+              "label": "Grant SuperUser Access",
+              "variant": "switch"
+            },
+            {
+              "type": "grid",
+              "columns": 2,
+              "style": { "marginTop": "32px" },
+              "children": [
+                {
+                  "type": "select",
+                  "name": "department",
+                  "label": "Department",
+                  "options": [
+                    { "label": "Engineering", "value": "eng" },
+                    { "label": "Design", "value": "design" }
+                  ]
+                },
+                {
+                  "type": "select",
+                  "name": "role",
+                  "label": "Role",
+                  "options": [
+                    { "label": "Lead", "value": "lead" },
+                    { "label": "Member", "value": "member" }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 2,
+              "children": [
+                {
+                  "type": "select",
+                  "name": "additionalRole",
+                  "label": "Additional Role",
+                  "options": [{ "label": "Mentor", "value": "mentor" }]
+                },
+                {
+                  "type": "select",
+                  "name": "additionalDept",
+                  "label": "Additional Department",
+                  "options": [{ "label": "QA", "value": "qa" }]
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "manager",
+              "label": "Reporting Manager",
+              "options": [{ "label": "John Director", "value": "john" }]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "columns": 2,
+          "style": { "marginTop": "24px" },
+          "children": [
+            { "type": "typography", "text": "" },
+            {
+              "type": "grid",
+              "columns": 2,
+              "children": [
+                { "type": "button", "text": "Cancel", "variant": "secondary", "action": "closeModal" },
+                { "type": "button", "text": "Save", "variant": "primary", "action": "submitForm" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

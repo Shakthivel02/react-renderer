@@ -5,7 +5,7 @@ import { GridContainer } from '../styles/styledComponents';
 
 export const Grid: React.FC<{ schema: GridSchema }> = ({ schema }) => {
   return (
-    <GridContainer $columns={schema.columns}>
+    <GridContainer $columns={schema.columns} style={schema.style}>
       {schema.children?.map((child, index) => (
         <Renderer key={index} node={child} />
       ))}

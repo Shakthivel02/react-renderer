@@ -2,12 +2,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { AppState } from './types';
 
 const initialState: AppState = {
-  entities: {
-    users: [
-      { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-      { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'Designer' }
-    ]
-  },
+  entities: {},
   toast: { message: '', type: 'success', visible: false },
 };
 

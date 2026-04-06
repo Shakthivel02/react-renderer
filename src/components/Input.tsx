@@ -15,11 +15,12 @@ export const Input: React.FC<{ schema: InputSchema }> = ({ schema }) => {
   const value = state[schema.name] || '';
 
   return (
-    <InputContainer>
+    <InputContainer style={schema.style}>
       {schema.label && <Label>{schema.label}</Label>}
       <StyledInput
         type="text"
         name={schema.name}
+        placeholder={schema.placeholder}
         $size={schema.size}
         $variant={schema.variant}
         value={value}

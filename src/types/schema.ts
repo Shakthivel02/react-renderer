@@ -1,4 +1,4 @@
-export type ComponentType = 'form' | 'input' | 'button' | 'grid' | 'card' | 'typography' | 'table';
+export type ComponentType = 'form' | 'input' | 'button' | 'grid' | 'card' | 'typography' | 'table' | 'select' | 'fileUpload' | 'checkbox';
 
 export interface BaseSchemaNode {
   type: ComponentType;
@@ -25,7 +25,9 @@ export interface TableSchema extends BaseSchemaNode {
   type: 'table';
   entityKey: string;
   columns: TableColumnSchema[];
+  apiEndpoint?: string;
   actions?: Array<{ type: 'delete' | 'edit'; label: string }>;
+  pagination?: { pageSize: number };
 }
 
 export interface FormSchema extends BaseSchemaNode {
@@ -44,6 +46,7 @@ export interface InputSchema extends BaseSchemaNode {
   type: 'input';
   name: string;
   label: string;
+  placeholder?: string;
   variant?: string;
   size?: 'sm' | 'md' | 'lg';
 }
@@ -55,4 +58,26 @@ export interface ButtonSchema extends BaseSchemaNode {
   action?: 'submitForm' | string;
 }
 
-export type SchemaNode = FormSchema | GridSchema | InputSchema | ButtonSchema | CardSchema | TypographySchema | TableSchema;
+export interface SelectSchema extends BaseSchemaNode {
+  type: 'select';
+  name: string;
+  label: string;
+  options: Array<{ label: string; value: string }>;
+}
+
+export interface FileUploadSchema extends BaseSchemaNode {
+  type: 'fileUpload';
+  name: string;
+  label?: string;
+  placeholder: string;
+  helpText?: string;
+}
+
+export interface CheckboxSchema extends BaseSchemaNode {
+  type: 'checkbox';
+  name: string;
+  label: string;
+  variant?: 'switch' | 'default';
+}
+
+export type SchemaNode = FormSchema | GridSchema | InputSchema | ButtonSchema | CardSchema | TypographySchema | TableSchema | SelectSchema | FileUploadSchema | CheckboxSchema;

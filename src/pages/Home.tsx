@@ -2,14 +2,15 @@ import React from 'react';
 import { Renderer } from '../renderer/Renderer';
 import schemaData from '../schema/schema.json';
 import type { SchemaNode } from '../types/schema';
+import { PageWrapper } from '../components/PageWrapper';
 
 const Home: React.FC = () => {
   const schema = schemaData as SchemaNode;
 
   return (
-    <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto' }}>
+    <PageWrapper>
       <Renderer node={schema} />
-    </div>
+    </PageWrapper>
   );
 };
 

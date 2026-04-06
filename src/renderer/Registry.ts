@@ -8,6 +8,10 @@ import { Typography } from '../components/Typography';
 import { Table } from '../components/Table';
 import type { ComponentType } from '../types/schema';
 
+import { Select } from '../components/Select';
+import { FileUpload } from '../components/FileUpload';
+import { Checkbox } from '../components/Checkbox';
+
 export const Registry: Record<ComponentType, React.FC<{ schema: any }>> = {
   form: Form,
   input: Input,
@@ -15,5 +19,8 @@ export const Registry: Record<ComponentType, React.FC<{ schema: any }>> = {
   grid: Grid,
   card: Card,
   typography: Typography,
-  table: Table
+  table: Table,
+  select: Select,
+  fileUpload: FileUpload,
+  checkbox: Checkbox
 };

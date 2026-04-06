@@ -3,13 +3,15 @@ import { Renderer } from '../renderer/Renderer';
 import aboutSchema from '../schema/aboutSchema.json';
 import type { SchemaNode } from '../types/schema';
 
+import { PageWrapper } from '../components/PageWrapper';
+
 const About: React.FC = () => {
   const schema = aboutSchema as SchemaNode;
 
   return (
-    <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto' }}>
+    <PageWrapper>
       <Renderer node={schema} />
-    </div>
+    </PageWrapper>
   );
 };
 

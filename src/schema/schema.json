@@ -4,61 +4,32 @@
   "children": [
     {
       "type": "card",
-      "children": [
+      "header": [
         {
           "type": "typography",
-          "text": "User Management Directory",
-          "variant": "h1"
-        },
-        {
-          "type": "typography",
-          "text": "Add a new user to the system or manage existing ones.",
-          "variant": "secondary"
-        }
-      ]
-    },
-    {
-      "type": "card",
-      "children": [
-        {
-          "type": "typography",
-          "text": "Add New User",
+          "text": "System Users",
           "variant": "h2"
         },
         {
-          "type": "form",
+          "type": "button",
+          "text": "+",
+          "action": "openModal",
+          "target": "addUser",
+          "variant": "primary"
+        }
+      ],
+      "children": [
+        {
+          "type": "table",
           "entityKey": "users",
-          "children": [
-            {
-              "type": "grid",
-              "columns": 3,
-              "children": [
-                {
-                  "type": "input",
-                  "name": "name",
-                  "label": "Full Name",
-                  "size": "md"
-                },
-                {
-                  "type": "input",
-                  "name": "email",
-                  "label": "Email Address",
-                  "size": "md"
-                },
-                {
-                  "type": "input",
-                  "name": "role",
-                  "label": "Job Role",
-                  "size": "md"
-                }
-              ]
-            },
-            {
-              "type": "button",
-              "text": "Create User",
-              "variant": "primary",
-              "action": "submitForm"
-            }
+          "pagination": { "pageSize": 5 },
+          "columns": [
+            { "header": "Full Name", "accessor": "firstName" },
+            { "header": "Email", "accessor": "email" },
+            { "header": "Role", "accessor": "role" }
+          ],
+          "actions": [
+            { "type": "delete", "label": "Remove" }
           ]
         }
       ]
@@ -68,19 +39,18 @@
       "children": [
         {
           "type": "typography",
-          "text": "System Users",
+          "text": "Product Inventory (Live API)",
           "variant": "h2"
         },
         {
           "type": "table",
-          "entityKey": "users",
+          "entityKey": "products",
+          "apiEndpoint": "/products",
+          "pagination": { "pageSize": 5 },
           "columns": [
-            { "header": "Full Name", "accessor": "name" },
-            { "header": "Email", "accessor": "email" },
-            { "header": "Role", "accessor": "role" }
-          ],
-          "actions": [
-            { "type": "delete", "label": "Remove" }
+            { "header": "Product Title", "accessor": "title" },
+            { "header": "Category", "accessor": "category" },
+            { "header": "Price ($)", "accessor": "price" }
           ]
         }
       ]
